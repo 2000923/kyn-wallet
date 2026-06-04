@@ -48,9 +48,9 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Create project structure per Clean Architecture plan
+- [ ] T002 Initialize project with NO external dependencies
+- [ ] T003 [P] Configure strict formatting and naming tools (PascalCase only)
 
 ---
 
@@ -62,12 +62,12 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [ ] T004 Setup data structures (No external DB libraries)
+- [ ] T005 [P] Implement authentication/authorization layer
+- [ ] T006 [P] Setup route handler structure with strict validation
+- [ ] T007 Create base Domain entities that all stories depend on
+- [ ] T008 Configure error handling infrastructure
+- [ ] T009 Setup dependency injection (manual, no libraries)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -79,7 +79,7 @@ Examples of foundational tasks (adjust based on your project):
 
 **Independent Test**: [How to verify this story works on its own]
 
-### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
+### Tests for User Story 1 (MANDATORY - TDD Enforced) ⚠️
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 

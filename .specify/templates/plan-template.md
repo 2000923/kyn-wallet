@@ -31,7 +31,13 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **TDD**: Is the test strategy defined before implementation?
+- [ ] **SOLID**: Does the design enforce SOLID principles?
+- [ ] **Clean Architecture**: Are layers strictly separated with inward dependencies?
+- [ ] **DRY & YAGNI**: Is the design free of unnecessary complexity and duplicated code?
+- [ ] **Naming**: Does the plan respect `PascalCase` for structures?
+- [ ] **Dependencies**: Is the solution completely free of external libraries?
+- [ ] **Security**: Are all inputs validated and protected routes authenticated?
 
 ## Project Structure
 
