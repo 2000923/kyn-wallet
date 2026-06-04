@@ -1,28 +1,37 @@
-# Investigación Técnica: Login de Billetera Virtual
+# Research: Login Implementation
 
-## Decisión: Stack Tecnológico (React + Next.js + Tailwind) vs Constitución (Cero librerías)
+## Decision: Testing Framework
+- **Decision**: Vitest + React Testing Library + JSDOM.
+- **Rationale**: 
+    - **Performance**: Instant watch mode and faster execution compared to Jest.
+    - **Modern Stack**: Native ESM and TypeScript support align with Next.js 14.
+    - **DX**: API compatibility with Jest makes it easy to use while providing a better developer experience.
+- **Alternatives considered**: 
+    - **Jest**: Rejected due to complex configuration with ESM/Next.js and slower startup times.
+    - **Cypress/Playwright**: Will be used for E2E if needed, but not as the primary unit/integration test runner for TDD logic.
 
-- **Decisión**: Se utilizará React, Next.js (App Router) y Tailwind CSS como la base fundamental del proyecto. No se instalará ninguna otra librería externa para validación (ej. Zod, Yup), manejo de formularios (React Hook Form) o peticiones HTTP (Axios).
-- **Justificación**: El usuario especificó expresamente el uso de estas tecnologías, lo cual anula de facto la directiva general de la constitución sobre cero librerías para la infraestructura principal. Sin embargo, para honrar el espíritu de la constitución, todo lo demás (lógica de dominio, validaciones, mocks de base de datos) se escribirá desde cero utilizando capacidades nativas de JavaScript/TypeScript y React.
-- **Alternativas consideradas**: Usar Vanilla JS como dictaba la constitución original. Se rechazó porque la instrucción del usuario prevalece.
+## Decision: Design Token Mapping
+- **Decision**: Centralized TypeScript definition in `lib/constants/DesignTokens.ts` imported into `tailwind.config.ts`.
+- **Rationale**: 
+    - **Type Safety**: Ensures design tokens are consistent across the app.
+    - **Maintainability**: Single source of truth for Figma values.
+    - **Tailwind Integration**: Easy to extend the theme in `tailwind.config.ts` by importing the object.
+- **Alternatives considered**: 
+    - **Direct Hardcoding**: Rejected as it violates maintainability and DRY principles.
+    - **CSS Variables only**: Rejected as it loses Tailwind's utility class benefits and type-safe config.
 
-## Decisión: Implementación de Arquitectura Limpia en Next.js
+## Decision: Component Architecture
+- **Decision**: Clean Architecture approach with a split between UI components and logic.
+- **Rationale**: 
+    - **SOLID**: Separating `LoginForm` (UI) from `AuthService` (Logic).
+    - **Clean Architecture**: Domain entities (User) and Use Cases (Login) separated from Infrastructure (Next.js components).
+- **Alternatives considered**: 
+    - **Everything in Page**: Rejected as it violates SRP and Clean Architecture principles.
 
-- **Decisión**: La carpeta `lib/` alojará estrictamente las capas interiores:
-  - `lib/Domain/`: Entidades (ej. `User.ts`) y contratos de repositorios.
-  - `lib/UseCases/`: Lógica de aplicación (ej. `AuthenticateUserUseCase.ts`).
-  - `lib/Adapters/`: Implementaciones concretas (ej. `HardcodedUserRepository.ts`).
-  La interfaz gráfica (`app/` y `components/`) actuará como la capa más externa, comunicándose únicamente con los Casos de Uso.
-- **Justificación**: Mantiene el desacoplamiento requerido por la constitución. Permite cambiar fácilmente de una base de datos "hardcodeada" a una real en el futuro sin tocar la interfaz ni la lógica central.
-- **Alternativas consideradas**: Poner toda la lógica dentro de los componentes React (Server Actions / Route Handlers mezclados con lógica). Se rechazó por violar la separación de responsabilidades y la constitución.
-
-## Decisión: Manejo de Estado y Formularios
-
-- **Decisión**: Se usarán estados nativos de React (`useState`) y manejo nativo de eventos del DOM para el formulario de login, junto con validaciones personalizadas en cliente.
-- **Justificación**: Evita el uso de librerías externas de formularios, cumpliendo parcialmente la restricción de la constitución.
-- **Alternativas consideradas**: Formik o React Hook Form (rechazados por ser librerías externas).
-
-## Decisión: Comportamiento de Enlaces Secundarios
-
-- **Decisión**: Se implementarán como botones visuales que disparan una alerta del navegador nativa (`window.alert("Próximamente")`) o similar, sin alterar el estado.
-- **Justificación**: La especificación demandaba que fueran visualmente inactivos o mostraran inactividad. Una alerta es nativa, no requiere librerías, y deja claro que es funcionalidad futura.
+## Decision: Brand Panel Implementation
+- **Decision**: Pure CSS/Tailwind implementation of the gradient and mockup layout.
+- **Rationale**: 
+    - **Performance**: No extra SVG assets or heavy images where CSS suffices.
+    - **Constraint Compliance**: Zero external libraries.
+- **Alternatives considered**: 
+    - **Figma Exported SVG**: Rejected to maintain control over responsiveness and animations via code.

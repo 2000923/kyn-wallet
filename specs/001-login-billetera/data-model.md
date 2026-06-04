@@ -1,29 +1,29 @@
-# Modelo de Datos: Login de Billetera Virtual
+# Data Model: Login
 
-## Entidades de Dominio
+## Entities
 
-### `User`
-Representa al usuario dentro del sistema, utilizado para validar la sesión. En esta iteración, reside en memoria.
+### User
+Representa a un usuario registrado en el sistema (simulado).
 
-**Atributos**:
-- `Email` (string): Identificador único del usuario. Debe cumplir con un formato de correo electrónico válido.
-- `Password` (string): Contraseña del usuario. En un escenario real estaría hasheada, pero para esta simulación puede ser texto plano.
-- `Name` (string): Nombre a mostrar en la interfaz (opcional, para futura personalización).
+| Campo | Tipo | Validación | Descripción |
+|-------|------|------------|-------------|
+| `Email` | `string` | Regex (email) | Correo electrónico único. |
+| `Password` | `string` | Min 8 chars | Contraseña de acceso. |
 
-**Reglas de Validación**:
-- `Email` no puede estar vacío y debe contener un símbolo `@` y un dominio.
-- `Password` no puede estar vacío.
+### DesignTokens
+Mapa de valores visuales extraídos de Figma.
 
-## Repositorios (Interfaces)
+| Token | Valor Figma | Aplicación |
+|-------|-------------|------------|
+| `BrandPrimary` | `#ff6b3d` | Botón principal, acentos. |
+| `BrandGradientStart` | `rgb(255, 138, 101)` | Fondo Brand Panel. |
+| `BrandGradientEnd` | `rgb(239, 82, 38)` | Fondo Brand Panel. |
+| `Neutral900` | `#16182c` | Títulos principales. |
+| `Neutral500` | `#8a8ca8` | Textos secundarios. |
+| `Neutral300` | `#d7d9e6` | Bordes y divisores. |
+| `BorderRadiusLg` | `12px` | Inputs y botones. |
+| `BorderRadiusMd` | `6px` | Checkbox. |
 
-### `IUserRepository`
-Define los contratos para interactuar con la persistencia de usuarios, independizando los casos de uso de si los datos vienen de una base de datos, una API o están "hardcodeados".
-
-**Métodos**:
-- `FindByEmail(email: string): Promise<User | null>`: Busca un usuario por su correo.
-
-## Estados de Autenticación (Manejo de Sesión Simulado)
-
-Dado que no se usan librerías externas complejas para manejo de estado global (como Redux) o de sesión (como NextAuth), la sesión puede simularse mediante:
-- Guardar una bandera simple en `localStorage` o `sessionStorage` (ej. `isAuthenticated: true`) temporalmente para proteger la ruta `/construction`, o
-- Usar un estado simple de React si se navega a nivel de componentes cliente. Sin embargo, para enrutamiento en Next.js, una cookie o `localStorage` es la opción más viable usando APIs nativas.
+## Relationships
+- Un `User` intenta autenticarse mediante el `LoginForm`.
+- `LoginForm` aplica los `DesignTokens` para su representación visual.

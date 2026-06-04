@@ -1,91 +1,97 @@
-# Especificación de Funcionalidad: Login de Billetera Virtual
+# Especificación de Funcionalidad: Actualización de Login con Diseño Figma
 
-**Feature Branch**: `001-login-billetera`  
-**Creado**: 2026-06-03  
+**Feature Branch**: `002-login-spec-update`  
+**Creado**: 2026-06-04  
 **Estado**: Borrador  
-**Entrada**: "Construye la pantalla de login de una billetera virtual para eso utiliza el MCP de figma... la autenticacion va ser simulada con usuarios harcodeados. Login exitoso lo debe redirigir a una pantalla en construcción."
+**Entrada**: "Actualiza el spec del login. Usa el MCP de Figma para obtener el contexto de diseño de este frame: https://www.figma.com/design/f7uDsv8sh6ZOtK2OitTqtg/Billetera-Virtual---Prototipos?node-id=2-2&t=tZepRnS4l8ITDqOs-4 Los colores, tipografía y estructura del formulario deben coincidir con el diseño de Figma (login)."
 
 ## Escenarios de Usuario y Pruebas *(obligatorio)*
 
 ### Historia de Usuario 1 - Autenticación Exitosa (Prioridad: P1)
 
-Como usuario registrado de la billetera virtual, quiero ingresar mi correo y contraseña válidos para acceder a mi cuenta.
+Como usuario registrado, quiero ingresar mi correo y contraseña válidos en un formulario que refleje la identidad visual de KynWallet para acceder a mi cuenta.
 
-**Por qué esta prioridad**: Es el flujo principal de acceso a la aplicación, sin él los usuarios no pueden utilizar su billetera.
+**Por qué esta prioridad**: Es el flujo crítico de entrada. La identidad visual genera confianza y profesionalismo.
 
-**Prueba Independiente**: Se puede probar verificando que al ingresar credenciales hardcodeadas correctas, el sistema redirige a la pantalla "en construcción".
-
-**Escenarios de Aceptación**:
-
-1. **Dado** que el usuario se encuentra en la pantalla de Login, **Cuando** ingresa credenciales válidas y hace clic en "Iniciar sesión", **Entonces** el sistema valida la entrada y redirige al usuario a la pantalla de "En construcción".
-
----
-
-### Historia de Usuario 2 - Manejo de Credenciales Inválidas (Prioridad: P2)
-
-Como usuario, quiero recibir retroalimentación visual si ingreso mis credenciales incorrectamente para poder corregirlas e intentar de nuevo.
-
-**Por qué esta prioridad**: Evita frustración y confusión en caso de que el usuario cometa un error tipográfico.
-
-**Prueba Independiente**: Se puede probar intentando ingresar con correos o contraseñas que no existan en la lista hardcodeada.
+**Prueba Independiente**: Se puede probar verificando que al ingresar credenciales correctas (ej. tucorreo@ejemplo.com / 12345678), el sistema redirige a la pantalla de "En construcción" y que la UI coincide con los colores brand (#ff6b3d) y tipografía Inter.
 
 **Escenarios de Aceptación**:
 
-1. **Dado** que el usuario se encuentra en la pantalla de Login, **Cuando** ingresa un correo o contraseña incorrecta y hace clic en "Iniciar sesión", **Entonces** se muestra un mensaje de error claro y no se le permite avanzar.
+1. **Dado** que el usuario está en la pantalla de Login, **Cuando** ingresa un correo y contraseña válidos y presiona "Iniciar sesión", **Entonces** el sistema valida los datos y lo redirige a la pantalla de éxito.
+2. **Dado** que el usuario visualiza el panel izquierdo, **Cuando** observa la marca, **Entonces** debe ver el degradado naranja y la tarjeta de mockup con los datos de "STEVEN LUNA" y el logo de "KynWallet".
 
 ---
 
-### Historia de Usuario 3 - Interacción con Formulario y Accesibilidad (Prioridad: P3)
+### Historia de Usuario 2 - Retroalimentación de Diseño y Validaciones (Priority: P2)
 
-Como usuario, quiero poder ver el diseño de la billetera KynWallet junto al formulario, y poder navegar de forma accesible mediante teclado por los campos de correo, contraseña y botones.
+Como usuario, quiero que los campos de entrada y botones tengan el estilo visual definido en Figma (bordes redondeados de 12px, colores neutros específicos) para tener una experiencia coherente.
 
-**Por qué esta prioridad**: Garantiza que la experiencia visual coincida con el prototipo y que la interfaz sea usable.
+**Por qué esta prioridad**: La consistencia visual es clave para la usabilidad y la percepción de calidad del producto.
 
-**Prueba Independiente**: Carga visual de la pantalla y uso de la tecla TAB para navegar por los controles.
+**Prueba Independiente**: Inspección visual de los elementos: radio de borde de 12px en inputs y botón principal, color de texto #16182c para encabezados.
 
 **Escenarios de Aceptación**:
 
-1. **Dado** que un usuario abre la aplicación, **Cuando** se muestra la pantalla de inicio, **Entonces** debe visualizar el panel izquierdo de la marca (KynWallet) y el formulario derecho según el diseño provisto.
+1. **Dado** que el usuario interactúa con los inputs, **Cuando** el campo está vacío o tiene un formato inválido, **Entonces** el sistema debe mostrar una validación visual que respete el estilo del formulario.
+2. **Dado** que el usuario ve el botón de "Iniciar sesión", **Cuando** lo presiona, **Entonces** debe tener el color de fondo #ff6b3d y texto blanco en SemiBold.
 
 ---
 
-### Casos Extremos (Edge Cases)
+### Historia de Usuario 3 - Interacción con Elementos Secundarios (Priority: P3)
 
-- ¿Qué sucede si el usuario intenta enviar el formulario con campos vacíos? (Debería mostrar error de validación de entradas).
-- ¿Qué sucede si el formato del correo electrónico ingresado no es válido (ej. `correo_sin_arroba.com`)?
+Como usuario, quiero ver las opciones de "Recordarme", "¿Olvidaste tu contraseña?" y los accesos sociales (Google/Apple) con el diseño de Figma, aunque su funcionalidad sea limitada en esta fase.
+
+**Por qué esta prioridad**: Completa la interfaz visual según el prototipo de alta fidelidad.
+
+**Prueba Independiente**: Verificación de la presencia del divisor "o continúa con" y los botones sociales con borde de 1.5px color #d7d9e6.
+
+**Escenarios de Aceptación**:
+
+1. **Dado** que el usuario ve la sección de redes sociales, **Cuando** hace clic en Google o Apple, **Entonces** el sistema muestra un aviso de "Funcionalidad próximamente".
+
+---
+
+### Casos Extremos
+
+- ¿Cómo se comporta el degradado del panel izquierdo en pantallas con relaciones de aspecto muy anchas o muy estrechas?
+- ¿Qué sucede si el usuario intenta ingresar una contraseña de menos de 8 caracteres (según los puntos del mockup)?
 
 ## Requisitos *(obligatorio)*
 
 ### Restricciones de Seguridad y Validación *(obligatorio)*
 
-- **Restricción**: Todas las entradas del usuario DEBEN ser rigurosamente validadas antes de su procesamiento (ej. formato de email válido, contraseñas no vacías).
-- **Restricción**: Todas las rutas protegidas (ej. pantalla en construcción) DEBEN requerir autenticación antes de otorgar acceso.
-- **Restricción**: El uso de librerías externas está estrictamente prohibido. Toda validación y lógica debe ser código propio.
+- **Restricción**: Todas las entradas del usuario DEBEN ser rigurosamente validadas antes del procesamiento.
+- **Restricción**: Todas las rutas protegidas DEBEN requerir autenticación previa.
+- **Restricción**: El uso de librerías externas para la UI o lógica está estrictamente prohibido.
 - **Restricción**: Se debe usar `PascalCase` para el nombramiento de las estructuras relevantes.
 
 ### Requisitos Funcionales
 
-- **FR-001**: El sistema DEBE mostrar una pantalla dividida en dos secciones: un panel de marca a la izquierda y un formulario de inicio de sesión a la derecha, coincidiendo con el diseño referenciado.
-- **FR-002**: El sistema DEBE incluir campos para "Correo electrónico" y "Contraseña", y un botón principal de "Iniciar sesión".
-- **FR-003**: El sistema DEBE proveer validación en tiempo real para asegurar que los campos no estén vacíos antes del envío.
-- **FR-004**: El sistema DEBE validar el correo y contraseña contra un arreglo/lista estricta de usuarios "hardcodeados" en el sistema.
-- **FR-005**: El sistema DEBE redirigir al usuario a una pantalla de "En construcción" ante una validación exitosa.
-- **FR-006**: El sistema DEBE incluir opciones visuales inactivas para "Recordarme", "¿Olvidaste tu contraseña?", registro y botones de redes sociales (Google, Apple) según el diseño. Estas opciones secundarias mostrarán una alerta nativa de "Próximamente" o "No disponible" al hacer clic en ellas.
+- **FR-001**: El sistema DEBE implementar un diseño de pantalla dividida: Panel de Marca (Brand Panel) a la izquierda y Panel de Formulario (Form Panel) a la derecha.
+- **FR-002**: El **Brand Panel** DEBE tener un fondo con gradiente lineal de 121.19° desde `rgb(255, 138, 101)` hasta `rgb(239, 82, 38)`.
+- **FR-003**: El sistema DEBE usar la tipografía **Inter** en sus variantes Bold, SemiBold, Medium y Regular según se especifica en el diseño.
+- **FR-004**: El **Formulario** DEBE incluir campos de "Correo electrónico" y "Contraseña" con bordes redondeados de 12px y color de borde `#d7d9e6`.
+- **FR-005**: El botón de "Iniciar sesión" DEBE tener el color `#ff6b3d`, texto blanco SemiBold de 16px y bordes redondeados de 12px.
+- **FR-006**: Los encabezados DEBEN usar el color `#16182c` (Neutral 900) y los textos secundarios el color `#8a8ca8` (Neutral 500).
+- **FR-007**: El sistema DEBE incluir un mockup de tarjeta (Card Mockup) en el panel izquierdo con fondo `rgba(255, 255, 255, 0.16)` y borde `rgba(255, 255, 255, 0.35)`.
+- **FR-008**: El sistema DEBE mostrar opciones de acceso social (Google, Apple) con bordes de 1.5px color `#d7d9e6`.
 
 ### Entidades Clave
 
-- **User**: Representa a un usuario simulado. Atributos: `Email`, `Password`.
+- **AuthCredentials**: Representa los datos de acceso del usuario. Atributos: `Email`, `Password`.
+- **UIStyles**: Definición de los tokens de diseño (colores, espaciados, bordes) extraídos de Figma.
 
 ## Criterios de Éxito *(obligatorio)*
 
 ### Resultados Medibles
 
-- **SC-001**: Los usuarios pueden completar el inicio de sesión exitoso en menos de 30 segundos si conocen sus credenciales.
-- **SC-002**: El sistema deniega consistentemente el acceso a cualquier par de credenciales no registradas en la lista hardcodeada.
-- **SC-003**: La UI es responsiva y replica de manera fiel (hasta donde el código propio lo permita) la disposición del prototipo original.
+- **SC-001**: La interfaz del Login coincide visualmente en un 95% con el diseño de Figma proporcionado (disposición, colores y tipografía).
+- **SC-002**: El formulario es funcional y permite el acceso con las credenciales hardcodeadas en menos de 2 segundos de procesamiento.
+- **SC-003**: Todos los elementos de entrada (inputs, checkbox, botones) tienen el radio de borde de 12px (o 6px para el checkbox de Recordarme) según el diseño.
 
 ## Suposiciones
 
-- Dado que no se permite el uso de librerías externas, se asumirá el uso de elementos nativos de la plataforma destino (ej. HTML/CSS/Vanilla JS para web) o de los frameworks base explícitamente autorizados, simulando estados en memoria.
-- La lista de usuarios hardcodeados constará de al menos 2 pares de usuario/contraseña de prueba conocidos (ej. `tucorreo@ejemplo.com` / `12345678`).
-- Los botones de Google/Apple son elementos meramente decorativos en esta versión.
+- Se asume que el usuario tiene instalada la fuente "Inter" o que el sistema la cargará como recurso local.
+- Los activos visuales (logo, iconos sociales) se simularán mediante elementos CSS o placeholders si no están disponibles como archivos individuales.
+- El panel de marca ocupa un ancho fijo de 620px en la resolución de diseño (1440x1024), escalando proporcionalmente o manteniendo su estructura.
+- Las interacciones sociales y de recuperación de contraseña son meramente visuales para esta versión.
