@@ -15,10 +15,10 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize Next.js 14 project with TypeScript and Tailwind CSS
-- [ ] T002 [P] Configure Vitest and React Testing Library in `vitest.config.ts` and `vitest.setup.ts`
-- [ ] T003 [P] Setup strict `PascalCase` linting rules in `.eslintrc.json`
-- [ ] T004 Create base directory structure: `app/`, `components/`, `lib/`
+- [X] T001 Initialize Next.js 14 project with TypeScript and Tailwind CSS
+- [X] T002 [P] Configure Vitest and React Testing Library in `vitest.config.ts` and `vitest.setup.ts`
+- [X] T003 [P] Setup strict `PascalCase` linting rules in `.eslintrc.json`
+- [X] T004 Create base directory structure: `app/`, `components/`, `lib/`
 
 ---
 
@@ -26,11 +26,11 @@
 
 **Purpose**: Core infrastructure and design tokens
 
-- [ ] T005 [P] Define Figma design tokens in `lib/constants/DesignTokens.ts`
-- [ ] T006 Integrate design tokens into `tailwind.config.ts`
-- [ ] T007 Create custom UI base components (Button, Input) in `components/ui/` using tokens
-- [ ] T008 [P] Implement `AuthCredentials` type in `lib/types/Auth.ts`
-- [ ] T009 [P] Implement `AuthService` interface and mockup data in `lib/services/AuthService.ts`
+- [X] T005 [P] Define Figma design tokens in `lib/constants/DesignTokens.ts`
+- [X] T006 Integrate design tokens into `tailwind.config.ts`
+- [X] T007 Create custom UI base components (Button, Input) in `components/ui/` using tokens
+- [X] T008 [P] Implement `AuthCredentials` type in `lib/types/Auth.ts`
+- [X] T009 [P] Implement `AuthService` interface and mockup data in `lib/services/AuthService.ts`
 
 ---
 
@@ -42,16 +42,16 @@
 
 ### Tests for User Story 1 (MANDATORY - TDD) ⚠️
 
-- [ ] T010 [P] [US1] Create unit tests for `AuthService.login` in `lib/services/AuthService.test.ts`
-- [ ] T011 [P] [US1] Create integration tests for login flow in `app/login.test.tsx`
+- [X] T010 [P] [US1] Create unit tests for `AuthService.login` in `lib/services/AuthService.test.ts`
+- [X] T011 [P] [US1] Create integration tests for login flow in `app/login.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Implement `BrandPanel` component with Figma gradient and mockup in `components/BrandPanel.tsx`
-- [ ] T013 [US1] Implement `LoginForm` core logic and branding in `components/LoginForm.tsx`
-- [ ] T014 [US1] Setup main login page with split layout in `app/page.tsx`
-- [ ] T015 [US1] Create placeholder redirect page in `app/construction/page.tsx`
-- [ ] T016 [US1] Connect `LoginForm` to `AuthService` for redirection logic
+- [X] T012 [P] [US1] Implement `BrandPanel` component with Figma gradient and mockup in `components/BrandPanel.tsx`
+- [X] T013 [US1] Implement `LoginForm` core logic and branding in `components/LoginForm.tsx`
+- [X] T014 [US1] Setup main login page with split layout in `app/page.tsx`
+- [X] T015 [US1] Create placeholder redirect page in `app/construction/page.tsx`
+- [X] T016 [US1] Connect `LoginForm` to `AuthService` for redirection logic
 
 ---
 
@@ -63,15 +63,15 @@
 
 ### Tests for User Story 2 (TDD) ⚠️
 
-- [ ] T017 [P] [US2] Create unit tests for input validation logic in `lib/utils/Validation.test.ts`
-- [ ] T018 [US2] Add UI tests for error message visibility in `components/LoginForm.test.tsx`
+- [X] T017 [P] [US2] Create unit tests for input validation logic in `lib/utils/Validation.test.ts`
+- [X] T018 [US2] Add UI tests for error message visibility in `components/LoginForm.test.tsx`
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Implement validation utility functions in `lib/utils/Validation.ts`
-- [ ] T020 [US2] Update `LoginForm.tsx` with real-time validation feedback and Figma error styles
-- [ ] T021 [US2] Ensure all input elements in `components/ui/` strictly follow the 12px border-radius from tokens
-- [ ] T022 [US2] Apply SemiBold Inter font to the "Iniciar sesión" button in `components/ui/Button.tsx`
+- [X] T019 [P] [US2] Implement validation utility functions in `lib/utils/Validation.ts`
+- [X] T020 [US2] Update `LoginForm.tsx` with real-time validation feedback and Figma error styles
+- [X] T021 [US2] Ensure all input elements in `components/ui/` strictly follow the 12px border-radius from tokens
+- [X] T022 [US2] Apply SemiBold Inter font to the "Iniciar sesión" button in `components/ui/Button.tsx`
 
 ---
 
@@ -83,10 +83,10 @@
 
 ### Implementation for User Story 3
 
-- [ ] T023 [P] [US3] Implement social login buttons in `components/SocialLogins.tsx` with Figma styles
-- [ ] T024 [P] [US3] Add "Recordarme" checkbox and "Olvidaste tu contraseña" link in `components/LoginForm.tsx`
-- [ ] T025 [US3] Add native alert handlers for secondary actions in `components/LoginForm.tsx` and `components/SocialLogins.tsx`
-- [ ] T026 [US3] Implement the "o continúa con" divider in `components/LoginForm.tsx`
+- [X] T023 [P] [US3] Implement social login buttons in `components/SocialLogins.tsx` with Figma styles
+- [X] T024 [P] [US3] Add "Recordarme" checkbox and "Olvidaste tu contraseña" link in `components/LoginForm.tsx`
+- [X] T025 [US3] Add native alert handlers for secondary actions in `components/LoginForm.tsx` and `components/SocialLogins.tsx`
+- [X] T026 [US3] Implement the "o continúa con" divider in `components/LoginForm.tsx`
 
 ---
 
@@ -94,11 +94,11 @@
 
 **Purpose**: Final verification and documentation.
 
-- [ ] T027 [P] Verify responsive behavior of the split-panel layout in `app/page.tsx`
-- [ ] T028 Run all tests and ensure 100% pass rate
-- [ ] T029 [P] Update `quickstart.md` with any new environment or setup steps
-- [ ] T030 Final code review for `PascalCase` compliance across all files
-- [ ] T031 Perform final visual audit against Figma link
+- [X] T027 [P] Verify responsive behavior of the split-panel layout in `app/page.tsx`
+- [X] T028 Run all tests and ensure 100% pass rate
+- [X] T029 [P] Update `quickstart.md` with any new environment or setup steps
+- [X] T030 Final code review for `PascalCase` compliance across all files
+- [X] T031 Perform final visual audit against Figma link
 
 ---
 

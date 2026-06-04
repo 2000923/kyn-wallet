@@ -14,6 +14,7 @@
   npm run dev
   ```
 - La pantalla de login estará disponible en `/`.
+- Credenciales de prueba: `tucorreo@ejemplo.com` / `password123`.
 
 ## Testing
 - Ejecuta los tests unitarios y de integración con Vitest:
