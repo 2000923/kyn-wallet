@@ -1,50 +1,50 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: 1.0.0 -> 1.0.1
+Modified principles:
+- Traducción completa al español de todos los principios y restricciones.
+Added sections:
+- N/A
+Removed sections:
+- N/A
+Templates requiring updates:
+- Ninguna adicional, aunque los templates ya reflejan los principios en inglés, se podrán traducir a futuro si el usuario lo requiere.
+Follow-up TODOs: None
+-->
+# Constitución de kyn-wallet
 
-## Core Principles
+## Principios Centrales
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Desarrollo Guiado por Pruebas (TDD)
+Las pruebas DEBEN escribirse antes de la implementación. El ciclo Rojo-Verde-Refactorización se aplica estrictamente.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Principios SOLID
+El código DEBE adherirse a los principios SOLID (Responsabilidad Única, Abierto/Cerrado, Sustitución de Liskov, Segregación de Interfaces, Inversión de Dependencias) para asegurar el mantenimiento y la escalabilidad.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Arquitectura Limpia (Clean Architecture)
+El proyecto DEBE organizarse siguiendo los principios de Clean Architecture. Las capas deben estar estrictamente separadas (Dominio, Casos de Uso, Interfaces/Adaptadores, Infraestructura) y las dependencias deben apuntar hacia adentro.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. DRY y YAGNI
+- **DRY (No te repitas)**: Evita la duplicación de código abstrayendo la lógica compartida.
+- **YAGNI (No lo vas a necesitar)**: No agregues funcionalidad hasta que se considere necesaria. Mantén el código fuente simple y enfocado en los requisitos actuales.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Restricciones Técnicas
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Convenciones de Nombres
+Todos los nombres DEBEN seguir estrictamente `PascalCase` para componentes, clases, archivos (donde aplique) y estructuras relevantes.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Dependencias
+El uso de **librerías externas está estrictamente prohibido**. Toda funcionalidad debe ser implementada utilizando capacidades nativas o código propio de la casa.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Seguridad y Validación
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Validación de Entradas
+Todas las entradas de los usuarios DEBEN ser validadas rigurosamente antes de ser procesadas para prevenir inyecciones y asegurar la integridad de los datos.
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+### Autenticación
+Todas las rutas protegidas DEBEN requerir autenticación antes de conceder acceso. El acceso no autorizado debe ser rechazado explícitamente.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+## Gobernanza
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Las modificaciones requieren documentación y aprobación. Todos los pull requests y revisiones de código DEBEN verificar el cumplimiento de estos principios centrales y restricciones técnicas.
+
+**Versión**: 1.0.1 | **Ratificada**: 2026-06-03 | **Última Modificación**: 2026-06-03

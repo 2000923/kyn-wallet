@@ -82,6 +82,13 @@
   Fill them out with the right functional requirements.
 -->
 
+### Security & Validation Constraints *(mandatory)*
+
+- **Constraint**: All user inputs MUST be rigorously validated before processing.
+- **Constraint**: All protected routes MUST require authentication before granting access.
+- **Constraint**: The use of external libraries is strictly prohibited.
+- **Constraint**: `PascalCase` must be used for naming relevant structures.
+
 ### Functional Requirements
 
 - **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
