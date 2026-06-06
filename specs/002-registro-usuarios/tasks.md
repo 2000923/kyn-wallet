@@ -12,9 +12,9 @@
 
 **Purpose**: Preparar estructura minima reutilizable para la pantalla de registro.
 
-- [ ] T001 Crear ruta base de registro en app/register/page.tsx
-- [ ] T002 [P] Crear esqueletos de componentes de registro en components/RegisterForm.tsx y components/RegisterSocialLogins.tsx
-- [ ] T003 [P] Definir tipos del dominio de registro en lib/types/Register.ts
+- [X] T001 Crear ruta base de registro en app/register/page.tsx
+- [X] T002 [P] Crear esqueletos de componentes de registro en components/RegisterForm.tsx y components/RegisterSocialLogins.tsx
+- [X] T003 [P] Definir tipos del dominio de registro en lib/types/Register.ts
 
 ---
 
@@ -22,9 +22,9 @@
 
 **Purpose**: Infraestructura comun que bloquea las historias de usuario hasta completarse.
 
-- [ ] T004 [P] Crear contrato del servicio de registro simulado en lib/services/RegisterService.ts
-- [ ] T005 [P] Crear ruta explicita de login en app/login/page.tsx
-- [ ] T006 Preparar utilidades base de validacion para registro en lib/utils/RegisterValidation.ts
+- [X] T004 [P] Crear contrato del servicio de registro simulado en lib/services/RegisterService.ts
+- [X] T005 [P] Crear ruta explicita de login en app/login/page.tsx
+- [X] T006 Preparar utilidades base de validacion para registro en lib/utils/RegisterValidation.ts
 
 **Checkpoint**: Base lista; se puede avanzar por historias de usuario.
 
@@ -38,16 +38,16 @@
 
 ### Tests for User Story 1 (MANDATORY - TDD)
 
-- [ ] T007 [P] [US1] Crear prueba de flujo exitoso con redireccion en app/register/page.test.tsx
-- [ ] T008 [P] [US1] Crear prueba del registro simulado exitoso en lib/services/RegisterService.test.ts
+- [X] T007 [P] [US1] Crear prueba de flujo exitoso con redireccion en app/register/page.test.tsx
+- [X] T008 [P] [US1] Crear prueba del registro simulado exitoso en lib/services/RegisterService.test.ts
 
 ### Implementation for User Story 1
 
-- [ ] T009 [P] [US1] Implementar registro simulado en lib/services/RegisterService.ts
-- [ ] T010 [P] [US1] Implementar formulario base con campos requeridos en components/RegisterForm.tsx
-- [ ] T011 [US1] Integrar formulario en la pagina de registro en app/register/page.tsx
-- [ ] T012 [US1] Implementar link "¿Ya tienes cuenta? Inicia sesion" hacia /login en components/RegisterForm.tsx
-- [ ] T013 [US1] Implementar transporte y render del mensaje de exito en app/register/page.tsx y app/login/page.tsx
+- [X] T009 [P] [US1] Implementar registro simulado en lib/services/RegisterService.ts
+- [X] T010 [P] [US1] Implementar formulario base con campos requeridos en components/RegisterForm.tsx
+- [X] T011 [US1] Integrar formulario en la pagina de registro en app/register/page.tsx
+- [X] T012 [US1] Implementar link "¿Ya tienes cuenta? Inicia sesion" hacia /login en components/RegisterForm.tsx
+- [X] T013 [US1] Implementar transporte y render del mensaje de exito en app/register/page.tsx y app/login/page.tsx
 
 **Checkpoint**: US1 funcional y demostrable de forma independiente.
 
@@ -61,15 +61,15 @@
 
 ### Tests for User Story 2 (MANDATORY for critical flows)
 
-- [ ] T014 [P] [US2] Crear pruebas unitarias de reglas de validacion en lib/utils/RegisterValidation.test.ts
-- [ ] T015 [P] [US2] Crear pruebas de errores inline y bloqueo de submit en components/RegisterForm.test.tsx
+- [X] T014 [P] [US2] Crear pruebas unitarias de reglas de validacion en lib/utils/RegisterValidation.test.ts
+- [X] T015 [P] [US2] Crear pruebas de errores inline y bloqueo de submit en components/RegisterForm.test.tsx
 
 ### Implementation for User Story 2
 
-- [ ] T016 [P] [US2] Implementar reglas de validacion (obligatorios, email, longitud, confirmacion, terminos) en lib/utils/RegisterValidation.ts
-- [ ] T017 [US2] Integrar validaciones inline y mensajes por campo en components/RegisterForm.tsx
-- [ ] T018 [US2] Implementar checkbox de terminos y condiciones con validacion obligatoria en components/RegisterForm.tsx
-- [ ] T019 [US2] Implementar normalizacion con trim y bloqueo de doble envio en components/RegisterForm.tsx
+- [X] T016 [P] [US2] Implementar reglas de validacion (obligatorios, email, longitud, confirmacion, terminos) en lib/utils/RegisterValidation.ts
+- [X] T017 [US2] Integrar validaciones inline y mensajes por campo en components/RegisterForm.tsx
+- [X] T018 [US2] Implementar checkbox de terminos y condiciones con validacion obligatoria en components/RegisterForm.tsx
+- [X] T019 [US2] Implementar normalizacion con trim y bloqueo de doble envio en components/RegisterForm.tsx
 
 **Checkpoint**: US2 funcional y verificable sin depender de US3.
 
@@ -83,16 +83,16 @@
 
 ### Tests for User Story 3 (OPTIONAL unless critical)
 
-- [ ] T020 [P] [US3] Crear prueba de alertas en botones sociales en components/RegisterSocialLogins.test.tsx
-- [ ] T021 [P] [US3] Crear prueba de layout responsive de registro en app/register/page.test.tsx
+- [X] T020 [P] [US3] Crear prueba de alertas en botones sociales en components/RegisterSocialLogins.test.tsx
+- [X] T021 [P] [US3] Crear prueba de layout responsive de registro en app/register/page.test.tsx
 
 ### Implementation for User Story 3
 
-- [ ] T022 [P] [US3] Implementar botones Google y Apple en components/RegisterSocialLogins.tsx
-- [ ] T023 [US3] Integrar alerta con mensaje "Proximamente" para Google y Apple en components/RegisterSocialLogins.tsx
-- [ ] T024 [US3] Implementar layout desktop de dos paneles reutilizando components/BrandPanel.tsx en app/register/page.tsx
-- [ ] T025 [US3] Implementar variante mobile mostrando solo formulario en app/register/page.tsx
-- [ ] T026 [US3] Ajustar estilos Tailwind para fidelidad visual a Figma en app/register/page.tsx y components/RegisterForm.tsx
+- [X] T022 [P] [US3] Implementar botones Google y Apple en components/RegisterSocialLogins.tsx
+- [X] T023 [US3] Integrar alerta con mensaje "Proximamente" para Google y Apple en components/RegisterSocialLogins.tsx
+- [X] T024 [US3] Implementar layout desktop de dos paneles reutilizando components/BrandPanel.tsx en app/register/page.tsx
+- [X] T025 [US3] Implementar variante mobile mostrando solo formulario en app/register/page.tsx
+- [X] T026 [US3] Ajustar estilos Tailwind para fidelidad visual a Figma en app/register/page.tsx y components/RegisterForm.tsx
 
 **Checkpoint**: US3 funcional y consistente visualmente.
 
@@ -102,11 +102,11 @@
 
 **Purpose**: Validaciones finales de calidad, comandos de CI local y cierre de documentacion.
 
-- [ ] T027 [P] Actualizar pasos y escenarios de validacion en specs/002-registro-usuarios/quickstart.md
-- [ ] T028 Ejecutar lint de la feature mediante scripts definidos en package.json
-- [ ] T029 Ejecutar build de la feature mediante scripts definidos en package.json
-- [ ] T030 Ejecutar tests de la feature mediante scripts definidos en package.json
-- [ ] T031 Verificar recorrido manual final segun quickstart en specs/002-registro-usuarios/quickstart.md
+- [X] T027 [P] Actualizar pasos y escenarios de validacion en specs/002-registro-usuarios/quickstart.md
+- [X] T028 Ejecutar lint de la feature mediante scripts definidos en package.json
+- [X] T029 Ejecutar build de la feature mediante scripts definidos en package.json
+- [X] T030 Ejecutar tests de la feature mediante scripts definidos en package.json
+- [X] T031 Verificar recorrido manual final segun quickstart en specs/002-registro-usuarios/quickstart.md
 
 ---
 

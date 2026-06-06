@@ -70,3 +70,10 @@ npm run test:watch
 
 - Modelo de datos: `specs/002-registro-usuarios/data-model.md`
 - Contrato de UI: `specs/002-registro-usuarios/contracts/registro-ui.md`
+
+## Estado de verificacion (2026-06-06)
+
+- `npm run test -- --run`: OK (9 archivos, 19 pruebas).
+- `npm run lint`: OK (sin warnings ni errores).
+- `npm run build`: OK (build de produccion exitoso).
+- Recorrido funcional validado en pruebas de integracion para flujo de registro y redireccion a `/login`.

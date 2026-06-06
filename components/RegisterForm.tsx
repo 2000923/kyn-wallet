@@ -81,7 +81,7 @@ const RegisterForm: React.FC = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
         <Input
           id="fullName"
           label="Nombre completo"

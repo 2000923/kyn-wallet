@@ -1,3 +1,4 @@
+import React from 'react';
 import BrandPanel from '@/components/BrandPanel';
 import RegisterForm from '@/components/RegisterForm';
 
